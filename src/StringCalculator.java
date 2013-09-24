@@ -3,24 +3,26 @@ import java.util.List;
 
 public class StringCalculator {
 	public int add(String numbers) {
-		List<Integer> negatives = new ArrayList<Integer>();
+		List<Integer> negatives = new ArrayList<>();
 		int sum = 0;
 		String[] parseValues = parseValues(numbers);
-		
+		List<Integer> values = new ArrayList<>();
+
 		for (String number : parseValues) {
-			Integer value = Integer.parseInt(number);
+			values.add(Integer.parseInt(number));
+		}
+		
+		for (Integer value: values) {
 			if (value < 0) {
 				negatives.add(value);
 			}
 		}
 		
-		for (String number : parseValues) {
-			Integer value = Integer.parseInt(number);
+		for (Integer value: values) {
 			if (value <= 1000) {
 				sum += value;
 			}
 		}
-		
 		
 		if (!negatives.isEmpty()) {
 			throw new RuntimeException("Error: negatives not allowed " + negatives);

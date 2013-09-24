@@ -3,7 +3,6 @@ import java.util.List;
 
 public class StringCalculator {
 	public int add(String numbers) {
-		List<Integer> negatives = new ArrayList<>();
 		int sum = 0;
 		String[] parseValues = parseValues(numbers);
 		List<Integer> values = new ArrayList<>();
@@ -13,14 +12,16 @@ public class StringCalculator {
 		}
 		
 		for (Integer value: values) {
-			if (value < 0) {
-				negatives.add(value);
+			if (value <= 1000) {
+				sum += value;
 			}
 		}
 		
+		List<Integer> negatives = new ArrayList<>();
+		
 		for (Integer value: values) {
-			if (value <= 1000) {
-				sum += value;
+			if (value < 0) {
+				negatives.add(value);
 			}
 		}
 		

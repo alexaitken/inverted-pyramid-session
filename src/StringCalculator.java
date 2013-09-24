@@ -5,7 +5,9 @@ public class StringCalculator {
 	public int add(String numbers) {
 		List<Integer> negatives = new ArrayList<Integer>();
 		int sum = 0;
-		for (String number : parseValues(numbers)) {
+		String[] parseValues = parseValues(numbers);
+		
+		for (String number : parseValues) {
 			Integer value = Integer.parseInt(number);
 			if (value < 0) {
 				negatives.add(value);
@@ -13,6 +15,8 @@ public class StringCalculator {
 				sum += value;
 			}
 		}
+		
+		
 		if (!negatives.isEmpty()) {
 			throw new RuntimeException("Error: negatives not allowed " + negatives);
 		}

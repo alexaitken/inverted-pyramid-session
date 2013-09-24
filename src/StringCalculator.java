@@ -5,11 +5,7 @@ public class StringCalculator {
 	public int add(String numbers) {
 		int sum = 0;
 		String[] parseValues = parseValues(numbers);
-		List<Integer> values = new ArrayList<>();
-
-		for (String number : parseValues) {
-			values.add(Integer.parseInt(number));
-		}
+		List<Integer> values = toIntegers(parseValues);
 		
 		for (Integer value: values) {
 			if (value <= 1000) {
@@ -20,6 +16,15 @@ public class StringCalculator {
 		failIfThereAreNegatives(values);
 		
 		return sum;
+	}
+
+	private List<Integer> toIntegers(String[] parseValues) {
+		List<Integer> values = new ArrayList<>();
+
+		for (String number : parseValues) {
+			values.add(Integer.parseInt(number));
+		}
+		return values;
 	}
 
 	private void failIfThereAreNegatives(List<Integer> values) {

@@ -4,10 +4,12 @@ import java.util.List;
 public class StringCalculator {
 	public int add(String numbers) {
 		String[] parseValues = parseValues(numbers);
-		List<Integer> values = toIntegers(parseValues);
-		
+		List<Integer> values = toIntegers(parseValues);	
 		failIfThereAreNegatives(values);
+		return sum(values);
+	}
 
+	private int sum(List<Integer> values) {
 		int sum = 0;
 
 		for (Integer value: values) {

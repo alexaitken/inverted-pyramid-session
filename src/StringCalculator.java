@@ -17,18 +17,24 @@ public class StringCalculator {
 			}
 		}
 		
-		List<Integer> negatives = new ArrayList<>();
+		failIfThereAreNegatives(values);
 		
-		for (Integer value: values) {
+		return sum;
+	}
+
+	private void failIfThereAreNegatives(List<Integer> values) {
+		List<Integer> negatives = new ArrayList<>();
+
+		for (Integer value : values) {
 			if (value < 0) {
 				negatives.add(value);
 			}
 		}
-		
+
 		if (!negatives.isEmpty()) {
-			throw new RuntimeException("Error: negatives not allowed " + negatives);
+			throw new RuntimeException("Error: negatives not allowed "
+					+ negatives);
 		}
-		return sum;
 	}
 
 	private String[] parseValues(String numbers) {

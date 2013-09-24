@@ -3,6 +3,8 @@ import static org.hamcrest.Matchers.*;
 
 import org.junit.Test;
 
+import session.StringCalculator;
+
 public class StringCalculatorTest {
 
 	final StringCalculator sut = new StringCalculator();

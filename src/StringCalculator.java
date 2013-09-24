@@ -3,17 +3,18 @@ import java.util.List;
 
 public class StringCalculator {
 	public int add(String numbers) {
-		int sum = 0;
 		String[] parseValues = parseValues(numbers);
 		List<Integer> values = toIntegers(parseValues);
 		
+		failIfThereAreNegatives(values);
+
+		int sum = 0;
+
 		for (Integer value: values) {
 			if (value <= 1000) {
 				sum += value;
 			}
 		}
-		
-		failIfThereAreNegatives(values);
 		
 		return sum;
 	}

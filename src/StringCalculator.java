@@ -11,7 +11,12 @@ public class StringCalculator {
 			Integer value = Integer.parseInt(number);
 			if (value < 0) {
 				negatives.add(value);
-			} else if (value <= 1000) {
+			}
+		}
+		
+		for (String number : parseValues) {
+			Integer value = Integer.parseInt(number);
+			if (value <= 1000) {
 				sum += value;
 			}
 		}

@@ -55,7 +55,7 @@ public class StringCalculator {
 		return numbers.startsWith("//");
 	}
 
-	private String[] parseCustomDelimitedValues(String numbers) {
+	private String[] parseCustomDelimitedValues(String numbers) { /* this is a good method for slap */
 		int newlineIndex = numbers.indexOf('\n');
 		String rawCustomDelimiters = numbers.substring(2, newlineIndex);
 		String numberList = numbers.substring(newlineIndex + 1);

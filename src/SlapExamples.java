@@ -55,13 +55,12 @@ public class SlapExamples {
 
     public Person parseName(String rawName) {
         String[] namePieces = rawName.split(" ");
-        String firstName, lastName;
-
+        
         if (namePieces.length < 2)
             throw new IllegalArgumentException("We must have 2 names");
 
-        firstName = namePieces[0];
-        lastName = namePieces[namePieces.length - 1];
+        String firstName = namePieces[0];
+        String lastName = namePieces[namePieces.length - 1];
 
         return new Person(firstName, lastName);
     }
